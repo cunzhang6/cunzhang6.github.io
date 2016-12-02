@@ -142,13 +142,13 @@
                 <div class="tips-box hide">
                     <div class="tips-arrow"></div>
                     <ul class="tips-inner">
-                        <li>菜单</li>
-                        <li>标签</li>
+                        <li>Menu</li>
+                        <li>Tags</li>
                         
-                        <li>友情链接</li>
+                        <li>Friends</li>
                         
                         
-                        <li>关于我</li>
+                        <li>About Me</li>
                         
                     </ul>
                 </div>
@@ -258,7 +258,7 @@
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
 </nav>
       <div class="body-wrap">
   
@@ -291,532 +291,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>[本章重点如下]<br>1、常用配置<br>2、css样式代码<br>3、JavaScript<br>4、jQuery<br>5、AJAX<br>6、seo<br>7、雅虎军规</p>
-<h2 id="那么我们就开始吧"><a href="#那么我们就开始吧" class="headerlink" title="那么我们就开始吧"></a>那么我们就开始吧</h2><p>常用配置</p>
-<h3 id="1、常用配置"><a href="#1、常用配置" class="headerlink" title="1、常用配置"></a>1、常用配置</h3><p>css起名规范<br>内容：content<br>专栏：column<br>元素：element<br>页头：header<br>登录条：loginbar<br>标志：logo<br>侧栏：sidebar<br>广告：banner<br>导航：nav<br>子导航：subnav<br>菜单：menu<br>子菜单：submenu<br>搜索：search<br>滚动：scroll<br>页面主体：main<br>标签页：tab<br>文章列表：list<br>提示信息：msg<br>小技巧：tips<br>栏目标题：title<br>加入：joinus<br>指南：guide<br>服务：service<br>热点：hot<br>新闻：news<br>下载：download<br>注册：register<br>状态：status<br>按钮：btn<br>投票：vote<br>合作伙伴：partner<br>友情链接：friendlink<br>页脚：footer<br>版权：copyright</p>
-<p>默认样式<br>/<strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong>默认样式.css<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
-<p>body,ul,h1,h2,h3,h4,h5,h6,p,ol,dl,dt,dd,input,form,select,form,input,textarea{ margin:0; padding:0; font-family:”微软雅黑”}<br>li{ list-style:none}<br>a{ text-decoration:none}<br>a:hover {text-decoration:none;color:#4c4c4c;}a:active{text-decoration:none;color:#4c4c4c;}<br>a:visited {text-decoration:none;color:#4c4c4c;}<br>img{ border:none; display:block;}<br>.clear{ zoom:1}<br>.clear:after{ content:””; display:block; clear:both;}<br>/<strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong>end 默认样式.css<strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong><strong>*</strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong></strong>/</p>
-<p>css引入<br>元素内嵌样式：<br>&lt;和谐a href=”#” style=”color:blue;font-size:12px”&gt;<br>文档内嵌样式：<br>&lt;和谐style type=”text/css”&gt;<br>a{color:red}<br>&lt;和谐/style&gt;</p>
-<p>外部样式表：<br>&lt;和谐link rel=”stylesheet” type=”text/css” href=”cunzhang.css” &gt;</p>
-<p>IE渲染模式<br>&lt;和谐meta http-equiv=”X-UA-Compatitle” content=”IE=edge”/&gt;</p>
-<p>文本修饰<br>a:link,a:visited{}未连接和已连接<br>text-decoration:none; 设置下划线<br>font-weight 属性设置文本的粗细。<br>overflow:hidden;隐藏溢出<br>border-radius: 15px 15px 0 0;圆角</p>
-<p>全屏效果<br>全屏的元素及其父元素都要设置height:100%<br>将html、body标签设置height:100%<br>(注意：height:100%是跟随其父元素高度变化而变化的)</p>
-<p>#container,.sections,.section{<br>    height: 100%;<br>}<br>html,body{<br>    height: 100%;<br>}<br>使背景图位于屏幕中心</p>
-<p>#section0,#section1,#section2,#section3{<br>    background-color: #000;<br>    background-size: cover;<br>    background-position: 50% 50%;<br>    text-align: center;<br>    color: white;<br>}<br>如果设置横屏效果，需设置<br>当前N个内用页面：<br>float:left;<br>width:25%;<br>父元素设置width为400%;</p>
-<p>css样式代码<br>浮动<br>浮动会让元素塌陷。即被浮动元素的父元素不具有高度。例如一个父元素包含了浮动元素，它将塌陷具有零高度。<br>在浮动元素后加个div设置clear: both; height:0,overflow:hidden<br>使用clearfix;<br>设置父元素浮动;</p>
-<p>清除浮动<br>/*——总结：常用的清除浮动的方法。<br>1、使用空标签清除浮动。我用了很久的一种方法，空标签可以是div标签，也可以是P标签。我习惯用</p><p>，够简短，也有很多人用<hr>，只是需要另外 为其清除边框，但理论上可以是任何标签。这种方式是在需要清除浮动的父级元素内部的所有浮动元素后添加这样一个标签清除浮动，并为其定义CSS代 码：clear:both。此方法的弊端在于增加了无意义的结构元素。</p>
-<p>对于使用额外标签清除浮动（闭合浮动元素），是W3C推荐的 做法。至于使用<br>元素还是空<div></div>可以根据自己的喜好来选（当然你也可以使用其它块级元素）。不过要注意的 是，<br>本身是有表现的，它会多出一个换行出来，所以要设定它的heigh为0，以隐藏它的表现。所以大多数情况下使用空<div>比较合 适。</div></p>
-<p>2、使用overflow属性。此方法有效地解决了通过空标签元素清除浮动而不得不增加无意代码的弊端。使用该方法是只需在需要清除浮动的元素中定义CSS属性：overflow:auto，即可！”zoom:1″用于兼容IE6,也可以用width:100%。</p>
-<p>不过使用overflow的时候，可能会对页面表现带来影响，而且这种影响是不确定的，你最好是能在多个浏览器上测试你的页面；</p>
-<p>3、使用after伪对象清除浮动。 该方法只适用于非IE浏览器 。具体写法可参照以下示例。使用中需注意以下几点。一、该方法中必须为需要清除浮动元素的伪对象中设置height:0，否则该元素会比实际高出若干像 素；二、content属性是必须的，但其值可以为空，蓝色理想讨论该方法的时候content属性的值设为”.”，但我发现为空亦是可以的。</p>
-<p>此三种方法各有利弊，使用时应择优选择，个人习惯于第一种，比较稳定可靠。<br>参考链接：<a href="http://www.cnblogs.com/fengzheng126/archive/2012/05/19/2508778.html" target="_blank" rel="external">http://www.cnblogs.com/fengzheng126/archive/2012/05/19/2508778.html</a><br>——<em>/<br>定位属性<br>position: absolute; 绝对定位<br>position: relative; 相对定位<br>position: fixed;<br>ul下li的点变为图标<br>list-style-image:url(../images/i_bg.gif);<br>边框合并为一条<br>border-collapse: collapse;<br>图片对齐<br>vertical-align:middle;<br>去ul下li的点<br>list-style: none<br>去滚动条<br>overflow:hidden;<br>下划线<br>text-decoration:underline;<br>使鼠标浮动光标变为“小手”型状。<br>cursor:pointer;<br>Chome中：文本框内部轮廓<br>outline:none;<br>可延伸长度属性<br>min-height:123px;(IE6不支持)<br>_height:123px;(IE6专属)<br>透明<br>opacity:0.5<br>背光效果<br>box-shadow: 0 1vh 2vh #3887cd;<br>圆角<br>border-radius: 15px 15px 0 0;<br>镂空字体<br>-webkit-text-stroke: 2px #fff;<br>Div阴影<br>.mydiv{<br>width:250px;height:auto;border:#909090 1px solid;background:#fff;color:#333;<br>filter:progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=3);/</em>ie<em>/<br>-moz-box-shadow: 2px 2px 10px #909090;/</em>firefox<em>/<br>-webkit-box-shadow: 2px 2px 10px #909090;/</em>safari或chrome<em>/<br>box-shadow:2px 2px 10px #909090;/</em>opera或ie9*/<br>}<br>立体字<br>color: #F6F6F6;<br>text-shadow: 0px 0px 2px #686868, 0px 1px 1px #ddd, 0px 2px 1px #d6d6d6, 0px 3px 1px #ccc, 0px 4px 1px #c5c5c5, 0px 5px 1px #c1c1c1, 0px 6px 1px #bbb, 0px 7px 1px #777, 0px 8px 3px rgba(100, 100, 100, 0.4), 0px 9px 5px rgba(100, 100, 100, 0.1), 0px 10px 7px rgba(100, 100, 100, 0.15), 0px 11px 9px rgba(100, 100, 100, 0.2), 0px 12px 11px rgba(100, 100, 100, 0.25), 0px 13px 15px rgba(100, 100, 100, 0.3);<br>从上到下的线性渐变：</p>
-<p>#grad {<br>  background: -webkit-linear-gradient(red, blue); /<em> Safari 5.1 - 6.0 </em>/<br>  background: -o-linear-gradient(red, blue); /<em> Opera 11.1 - 12.0 </em>/<br>  background: -moz-linear-gradient(red, blue); /<em> Firefox 3.6 - 15 </em>/<br>  background: linear-gradient(red, blue); /<em> 标准的语法 </em>/<br>}<br>从左到右的线性渐变：</p>
-<p>#grad {<br>  background: -webkit-linear-gradient(left, red , blue); /<em> Safari 5.1 - 6.0 </em>/<br>  background: -o-linear-gradient(right, red, blue); /<em> Opera 11.1 - 12.0 </em>/<br>  background: -moz-linear-gradient(right, red, blue); /<em> Firefox 3.6 - 15 </em>/<br>  background: linear-gradient(to right, red , blue); /<em> 标准的语法 </em>/<br>}<br>从左上角到右下角的线性渐变：</p>
-<p>#grad {<br>  background: -webkit-linear-gradient(left top, red , blue); /<em> Safari 5.1 - 6.0 </em>/<br>  background: -o-linear-gradient(bottom right, red, blue); /<em> Opera 11.1 - 12.0 </em>/<br>  background: -moz-linear-gradient(bottom right, red, blue); /<em> Firefox 3.6 - 15 </em>/<br>  background: linear-gradient(to bottom right, red , blue); /<em> 标准的语法 </em>/<br>}</p>
-<p>不可选中文字<br>-moz-user-select:none;/<em>火狐</em>/<br>-webkit-user-select:none;/<em>webkit浏览器</em>/<br>-ms-user-select:none;/<em>IE10</em>/<br>-khtml-user-select:none;/<em>早期浏览器</em>/<br>user-select:none;<br>input去焦点光环<br>outline: medium;<br>rem<br>响应式网页设计:rem、em设置网页字体大小自适应<br>「rem」是指根元素（root element，html）的字体大小，好开心的是，从遥远的 IE6 到版本帝 Chrome 他们都约好了，根元素默认的 font-size 都是 16px。这样一个新的单位兼容性如何呢？<br>IE9+，Firefox、Chrome、Safari、Opera 的主流版本都支持了，我可以放肆的使用 rem 了。<br>em 的计算是基于父级元素的，在实际使用中给我们的计算带来了很大的不便。所以 rem 的出现解救了我这样不会算术的人，再也不用担心父级元素的 font-size 了，因为它始终是基于根元素（html） 的。<br>比如默认的 html font-size=16px，那么我想设置12px 的文字就是：12÷16=0.75（rem）<br>当然，你可以引入 CSS 预处理工具（Sass、LESS 、Stylus等）自动计算 rem 值，这里就不一一举例了。<br>但是像我这样的懒人或者团队开发中还没有引入 CSS 预处理工具的该肿么办呢？只能搬个计算器啪啪啪了吗？别急，你还可以变通一下。我们改变一下 html 的默认 font-size=10px 不就好计算了嘛！Like this：<br>html{font-size:62.5%; /<em> 10÷16=62.5% </em>/} body{font-size:12px;font-size:1.2rem ; /<em> 12÷10=1.2 </em>/} p{font-size:14px;font-size:1.4rem;}<br>需要注意的是，为了兼容不支持 rem 的浏览器，我们需要在 rem 前面写上对应的 px 值，这样不支持的浏览器可以优雅降级。其实不用太纠结是默认的 font-size:100%，还是设置为 font-size:62.5%，如果你引入了 CSS 预处理工具那么自然可以使用默认值，如果由于其他原因使用 font-size:62.5% 也无可厚非，完全可以在 body 中重置回你需要的默认 font-size。<br>文本超出省略<br>display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;</p>
-<p>IE兼容<br>对非A标签使用hover, ie8-不支持<br>JS<br>引入一个JS库</p>
-<script src="”style.js”">
-</script>
+        <p>[本章重点如下]<br>本章简介</p>
+<h2 id="那么我们就开始吧"><a href="#那么我们就开始吧" class="headerlink" title="那么我们就开始吧"></a>那么我们就开始吧</h2><p>本章简介</p>
+<h3 id="1、本章简介"><a href="#1、本章简介" class="headerlink" title="1、本章简介"></a>1、本章简介</h3><p>本章是我个人收集和总结的一些经验和技巧，恩，就是这样。如有雷同，纯属巧合。</p>
 
-<p>jQuery<br>引入jQuery库</p>
-<script src=" http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-开放云导航栏
-$(".sidebar li").each(function(r){//遍历
-    $(this).click(function(){//点击
-        $(".sidebar li").css("color","");//清空样式
-        $(this).css("color","#108cee");//赋予样式
-        $(".content li").hide();//所有关联样式隐藏
-        $(".content li").eq(r).show();//赋予关联样式显示
-    })
-});
-$(".sidebar li").eq(0).trigger("click");//默认选中第一个
-
-jQuery事件
-鼠标事件    键盘事件    表单事件    文档/窗口事件
-click    keypress    submit    load
-dblclick    keydown    change    resize
-mouseenter    keyup    focus    scroll
-mouseleave         blur    unload
-文档就绪事件
-$(document).ready()
-$(document).ready() 方法允许我们在文档完全加载完后执行函数。
-$function(){}//启动就加载
-设置内容和属性text()、html() 以及 val()
-我们将使用前一章中的三个相同的方法来设置内容：
-•    text() - 设置或返回所选元素的文本内容
-•    html() - 设置或返回所选元素的内容（包括 HTML 标记）
-•    val() - 设置或返回表单字段的值
-jQuery获取并设置 CSS 类
-jQuery 操作 CSS
-jQuery 拥有若干进行 CSS 操作的方法。我们将学习下面这些：
-•    addClass() - 向被选元素添加一个或多个类
-•    removeClass() - 从被选元素删除一个或多个类
-•    toggleClass() - 对被选元素进行添加/删除类的切换操作
-•    css() - 设置或返回样式属性
-设置 CSS 属性
-如需设置指定的 CSS 属性，请使用如下语法：
-css("propertyname","value");
-设置多个 CSS 属性
-如需设置多个 CSS 属性，请使用如下语法：
-css({"propertyname":"value","propertyname":"value",...});
-获得内容 - text()、html() 以及 val()
-三个简单实用的用于 DOM 操作的 jQuery 方法：
-•    text() - 设置或返回所选元素的文本内容
-•    html() - 设置或返回所选元素的内容（包括 HTML 标记）
-•    val() - 设置或返回表单字段的值
-下面的例子演示如何通过 jQuery text() 和 html() 方法来获得内容：
-例一
-<!DOCTYPE html>
-<html>
-<head>
-<script src="/jquery/jquery-1.11.1.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#btn1").click(function(){
-    alert("Text: " + $("#test").text());
-  });
-  $("#btn2").click(function(){
-    alert("HTML: " + $("#test").html());
-  });
-});
-</script>
-</head>
-<body>
-<p id="test">这是段落中的<b>粗体</b>文本。</p>
-<button id="btn1">显示文本</button>
-<button id="btn2">显示 HTML</button>
-</body>
-</html>
-例二
-<!DOCTYPE html>
-<html>
-<head>
-<script src="/jquery/jquery-1.11.1.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    alert("Value: " + $("#test").val());
-  });
-});
-</script>
-</head>
-
-<body>
-<p>姓名：<input type="text" id="test" value="米老鼠"></p>
-<button>显示值</button>
-</body>
-
-</html>
-例三
-<!DOCTYPE html>
-<html>
-<head>
-<script src="/jquery/jquery-1.11.1.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("button").click(function(){
-    alert($("#w3s").attr("href"));
-  });
-});
-</script>
-</head>
-
-<body>
-<p><a href="http://www.w3school.com.cn" id="w3s" target="_blank" rel="external">W3School.com.cn</a></p>
-<button>显示 href 值</button>
-</body>
-
-</html>
-设置内容 - text()、html() 以及 val()
-我们将使用前一章中的三个相同的方法来设置内容：
-•    text() - 设置或返回所选元素的文本内容
-•    html() - 设置或返回所选元素的内容（包括 HTML 标记）
-•    val() - 设置或返回表单字段的值
-下面的例子演示如何通过 text()、html() 以及 val() 方法来设置内容：
-实例
-$("#btn1").click(function(){
-  $("#test1").text("Hello world!");
-});
-$("#btn2").click(function(){
-  $("#test2").html("<b>Hello world!</b>");
-});
-$("#btn3").click(function(){
-  $("#test3").val("Dolly Duck");
-});
-text()、html() 以及 val() 的回调函数
-上面的三个 jQuery 方法：text()、html() 以及 val()，同样拥有回调函数。回调函数由两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。
-下面的例子演示带有回调函数的 text() 和 html()：
-设置属性 - attr()
-jQuery attr() 方法也用于设置/改变属性值。
-下面的例子演示如何改变（设置）链接中 href 属性的值：
-attr() 的回调函数
-jQuery 方法 attr()，也提供回调函数。回调函数由两个参数：被选元素列表中当前元素的下标，以及原始（旧的）值。然后以函数新值返回您希望使用的字符串。
-下面的例子演示带有回调函数的 attr() 方法：
-实例
-$("button").click(function(){
-  $("#w3s").attr("href", function(i,origValue){
-    return origValue + "/jquery";
-  });
-});
-
-hide() 和 show()
-$(selector).hide(speed,callback);
-
-$(selector).show(speed,callback);
-可选的 speed 参数规定隐藏/显示的速度，可以取以下值："slow"、"fast" 或毫秒。
-可选的 callback 参数是隐藏或显示完成后所执行的函数名称。
-$(document).bind('click',function(){
-$('#search-suggest').hide();
-});
-bind()
-bind() 方法为被选元素添加一个或多个事件处理程序，并规定事件发生时运行的函数。
-unbind取消绑定
-data()
-向元素附加数据，然后取回该数据：
-$("#btn1").click(function(){
-  $("div").data("greeting", "Hello World");
-});
-$("#btn2").click(function(){
-  alert($("div").data("greeting"));
-});
-on()方法
-描述：在选定的元素上绑定一个或多个事件处理函数
-events一个或多个空格分隔的事件类型，例如click keydown。
-selector 一个选择器字符串，用于过滤出被选中的元素中能触发事件的后代元素，如果为null，那么被选中的元素总是能触发事件。
-data事件触发时，要传递给处理函数的event.data。
-handler(eventObject)事件触发时，执行的函数。
-val()
-val() 方法返回或设置被选元素的值。
-元素的值是通过 value 属性设置的。该方法大多用于 input 元素。
-如果该方法未设置参数，则返回被选元素的当前值。
-例子
-<html>
-<head>
-<script type="text/javascript" src="/jquery/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("button").click(function(){
-    $("input:text").val(function(n,c){
-      return c + " Gates";
-    });
-  });
-});
-</script>
-</head>
-
-<body>
-<p>Name: <input type="text" name="user" value="Bill"></p>
-<button>设置文本域的值</button>
-</body>
-</html>
-Attr()
-attr() 方法设置或返回被选元素的属性值。
-根据该方法不同的参数，其工作方式也有所差异。
-例一
-<html>
-<head>
-<script type="text/javascript" src="/jquery/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("button").click(function(){
-    $("img").attr("width","180");
-  });
-});
-</script>
-</head>
-<body>
-<img src="/i/eg_smile.gif">
-<br>
-<button>设置图像的 width 属性</button>
-</body>
-</html>
-例2
-<html>
-<head>
-<script type="text/javascript" src="/jquery/jquery.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-  $("button").click(function(){
-    $("img").attr("width",function(n,v){
-      return v-50;
-    });
-  });
-});
-</script>
-</head>
-<body>
-<img src="/i/eg_smile.gif" width="128" height="128">
-<br>
-<button>减少图像的宽度 50 像素</button>
-</body>
-</html>
-输入框设置
-<input type="”text”" id="”address”" value="”请输入邮箱地址”/">
-
-鼠标获取焦点时，将值清空
-$(“address”).focus(function(){
-    var txt_value = $(this).val();
-    if(txt_value==”请输入邮箱地址”){
-        $(this.val(“”);
-        }
-});
-地址框失去焦点时，如果地址框的值为空，则将地址框的值设置为“请输入邮箱地址”
-$(“address”).blur(function(){
-    var txt_value = $(this).val();
-    if(txt_value==””){
-        $(this).val(“请输入邮箱地址”);
-    }
-})
-
-Offset()
-$(".btn1").click(function(){
-  x=$("p").offset();
-  $("#span1").text(x.left);
-  $("#span2").text(x.top);
-});
-获取元素偏移位置方法offset() 方法
-offset() 方法返回或设置匹配元素相对于文档的偏移（位置）。
-语法
-$(selector).offset(function(index,oldoffset))
-参数    描述
-function(index,oldoffset)    规定返回被选元素新偏移坐标的函数。
-•    index - 可选。接受选择器的 index 位置
-•    oldvalue - 可选。接受选择器的当前坐标。
-例：
-        <script>
-        $('#search_input').bind('keyup',function(){
-        //绑定输入事件
-        var searchText = $(‘#search_input’).val();
-        $.get(‘http://api.bing.com/qsonhs.aspx?q=’+searchText,function(d){
-            var d = d.AS.Results[0].Suggests;
-            var html=’’;
-        for(var i=0;i<d.length;i++){
-            html+=’<li>’+d[i].Txt+''</li>’;
-        }
-        $(‘search-result’).html(html);
-        $('search-suggest').show().css({
-        //显示位置为修改后的位置（即偏移位置）
-        top:$('#search-from').offset().top,
-        left:$('#search-from').offset().left,
-        position:'absolute'
-        });
-        },’json’);
-        });
-</script>
-
-<p>闭包的作用<br>(function($){<br>//do something<br>})(jQuery);<br>作用：避免全局依赖<br>避免第三方破坏<br>兼容jQuery操作符$和jQuery<br>开发方式<br>类级别组件开发<br>即给jQuery命名空间下添加新的全局函数，也称为静态方法。<br>jQuery.myPlugin=function(){<br>//do something<br>}<br>例如：$.Ajax()、$.exteng()<br>对象级别组件开发<br>即挂在jQuery原型下的方法，这样通过选择器获取的jQuery对象实例也能共享该方法，也称为动态方法。<br>$.fn.myPlugin=function(){<br>//do something<br>};<br>这里的$.fn===$.prototype<br>例如：addClass()、attr()等，需要创建实例来调用<br>链式调用<br>$(“div”).next().addClass()….<br>$.fn.myPlugin=function(){<br>    return this.each(function(){<br>        //do something<br>});<br>};<br>代码说明<br>-return this 返回当前对象，来维护插件的链式调用<br>-each 循环实现每个元素的访问<br>单例模式<br>$.fn.MyPlugin=function(){<br>    var me=$(this),<br>        instance=me.data(“myPlugin”);<br>    if(!instence){<br>        me.data(“myPlugin”,(instance=new myPlugin()));<br>    }<br>};<br>代码说明<br>如果实例存在则不再重新创建实例<br>利用data()来存放插件对象的实例<br>jQuery validate框架</p>
-<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
-<script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-$(document).ready(function(){
-    $("#from_apply").validate({
-        rules:{
-            qq:{
-                required:true,//必填
-                 number: true
-            }
-        }
-    });
-});
-
-AJAX
-Ajax发送请求的url地址与服务器地址必须是同一域名下
-登陆页面操作
-$(function(){
-//元素绑定全局ajaxStart事件
-$(“#divMsg”).ajaxStart(function(){
-        $(this).show().html(“正在发送登陆请求。。。”);
-})
-//元素绑定全局ajaxStop
-$(“#divMsg”).ajaxStop(function(){
-        $(this).show().html(“请求处理已完成。。。”).hide();
-})
-    $(“#Button1”).click(function(){//按钮点击事件
-    var $name = $(“#txtName”);//用户名
-    var $pass = $(“#txtPass”);//密码
-    if($name.val()!=””&&$pass.val!=””){
-    UserLogin($name.val(),$pass.val());//。。。
-}else{
-    if($name.val()==””){}
-        alert(“用户名不能为空!”);
-        $name.focus();//获取焦点
-        return false;//阻止程序往下走
-}else{
-        alert(“密码不能为空!”);
-        $pass.focus();
-        return false;
-    }
-}
-})
-});
-异步提交
-function UserLogin(name,pass){
-    $.ajax({
-    type:”GET”,
-    url:”index.php”,
-    data:”action=Login&d=” + new Date() + “&name=”+name+”&pass”+pass,
-    success:function(data){
-if(data==”1”){
-    window.location = “ChatMain.html”;
-}else{
-    alert(“用户名或密码错误！”);
-    return false;
-}
-}
-});
-}
-控制Div高度为滚动
-css:overflow-y:scroll;
-$(function(){
-发送按钮功能实现
-$(“#Button1”).click(function(){//按钮点击事件
-    var $content = $(“#txtContent”);//发送内容
-    if($content.val()!=””){
-    SendContent($content.val());
-}else{
-    alert(“发送不能为空！”);
-    $content.focus();
-    return false;
-}
-});
-})
-
-发送内容函数
-function SendContent(content){
-    $.ajax({
-    type:”GET”,
-    url:”index.php”,
-    data:”action=SendContent&d=” + new Date() + “&content” + content,
-    success:function(data){
-if(data==”1”){
-GetMessageLite();
-$(“#txtContent”).val(“”);
-}else{
-alert(“发送失败！”);
-return false;
-}
-}
-});
-}
-
-//显示表情图标，并将表情图标ID号码显示在文本框。
-var $a=”<img src="’url’">”;
-$(“#c”).html($a);
-
-function InitFace(){
-    var strHTML = “”;
-    for (var I =1;i<=10;i++){ strhtml="" +="”<img" src="”Face/”+i+”.gif" ’id="’”+i+”’/">;
-}
-$(“#divFace”).html(strHTML);
-}
-
-InitFace();
-$(“table tr td img”).click(function(){
-    //表情图标单击事件
-    var strContent = $(“#txtContent”).val()+”<: +="" this.id="" ”:="">”;
-$(“#txtContent”).val(strContent);
-})
-get() 方法
-语法：$.get(url,callback,'json');
-语法
-$(selector).get(url,data,success(response,status,xhr),dataType)
-参数    描述
-url    必需。规定将请求发送的哪个 URL。
-Data    可选。规定连同请求发送到服务器的数据。
-success(response,status,xhr)    可选。规定当请求成功时运行的函数。
-额外的参数：
-•    response - 包含来自请求的结果数据
-•    status - 包含请求的状态
-•    xhr - 包含 XMLHttpRequest 对象
-dataType    可选。规定预计的服务器响应的数据类型。
-默认地，jQuery 将智能判断。
-可能的类型：
-•    "xml"
-•    "html"
-•    "text"
-•    "script"
-•    "json"
-•    "jsonp"
-事件绑定
-
-事件代理
-jQuery :
-语法：$('document').delegate('li','click','fn');
-例：$(document).delegate('li','click',function(){
-   var keyword =$(this).text();
-   location.href='http://cn.bing.com/search?q='+keyword;
-});
-
-seo
-网页代码优化
-
-1<title> 标题
-强调重点即可，重要的关键词放在前面，不要重复出现，每个页面的title不要相同
-2<meta keywords="">关键词
-列举几个关键词即可，不要过分堆积
-3<meta description="">网页描述
-要高度概括网页的内容，不要过长，也不要过分堆积关键词，每个页面的description要不同
-
-4语义化代码（html标签都有自己的意义，在适当的位置用适当的标签）
-包括
-1）.H1—H6标签多用于标题
-2）.UL标签多用于无序列表
-3）.OL标签多用于有序列表
-4）.DL标签用于定义数据列表
-5）.em、strong表示强调
-div、span是html标签中最没有语义的（导航栏的代码比较，见课件，尽量用css表现样式，避免用html标签来表现样式）
-尽量用ul li 这类的标签描述导航
-5.细节
-<a>标签，设置title，以及如果不希望爬虫跑出去的话，设置rel为nofollow。
-<h1> 推荐使用。h1优先级最高，如果嫌大可以css样式控制大小。
-注意<br>只用于文本格式的换行
-用<caption>第一表格标题
-<img> 标签应使用alt说明
-<strong><em>与 <b><i>：strong和em显示效果分别与<b>和<i>相同，但是前两者都有强调作用，权重大，后两者权重小。所以不希望强调的地方就使用后两者而非前两者。
-重要内容HTML代码放在最前面，可以使用css等具体控制在页面渲染中的位置。
-重要内容不要用JS输出
-尽量不要使用iframe框架
-谨慎使用display:none;（小蜘蛛会过 滤.掉的）
-（ 使用Z-Index使暂时不显示的代码隐 藏，或者设置为浏览器显示范围外）
-不断精简代码
-
-
-
-YAHOO军规
-减少 HTTP 请求
-使用CDN（内容分发网络）
-添加Expire/Cache-Control头
-expire设置本地缓存的时间
-cache-control设置本地缓存
- 启用Gzip压缩
-将css放在页面最上面
-将script放在页面最下面
-避免在CSS中使用Expressions...
-把JavaScript和CSS都放到外部
-减少DNS查询
-压缩 JavaScript 和 CSS
-避免重定向
-移除重复的脚本
-配置实体标签（ETag）
-使 AJAX 缓存
-Yslow网站性能优化工具
-安装Yslow工具
-
-Bootstrap响应式布局
-头
-<meta name="viewport" content="width =device-width, initial-scale=1, maximum-scale=1">
-库
-<!-- 新 Bootstrap 核心 CSS 文件 -->
-<link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-<!-- 可选的Bootstrap主题文件（一般不使用） -->
-<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap-theme.min.css"></script>
-
-<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
-
-<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-
-</i></b></i></b></em></strong></caption></h1></a></title></:></=10;i++){>
       
     </div>
     
@@ -1215,14 +693,14 @@ Bootstrap响应式布局
                 2016 Yucun Lu
             </div>
             <div class="footer-right">
-                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
             </div>
         </div>
         
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
-                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        <span id="site-visit" title="Site Visitors"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
                 
@@ -1231,7 +709,7 @@ Bootstrap响应式布局
                 
                 
                     <span id="busuanzi_container_page_pv" style='display:none'>
-                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        <span id="page-visit"  title="Page Hits"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
@@ -1264,9 +742,9 @@ Bootstrap响应式布局
 
 
 <div class="scroll" id="scroll">
-    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
-    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
-    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
 </div>
 <script>
     // Open in New Window
